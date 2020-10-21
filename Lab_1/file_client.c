@@ -6,6 +6,8 @@
 #include<unistd.h>
 #include<stdlib.h>
 #include<stdio.h>
+#include<fcntl.h>
+#include<string.h>
 int main(int argc,char *argv[])
 {
   int create_socket;
@@ -23,9 +25,12 @@ int main(int argc,char *argv[])
   printf("Enter The Filename to Request : "); scanf("%s",fname);
   send(create_socket, fname, sizeof(fname), 0);
   printf("Request Accepted... Receiving File...\n\n");
-  printf("The contents of file are...\n\n");
+  char *new_fname = strcat(fname, "-copy");
+  printf("The contents of file are copied into %s\n", new_fname);
   while((cont=recv(create_socket, buffer, bufsize, 0))>0) {
-    write(1, buffer, cont);
+    int fd = open(new_fname, O_CREAT | O_RDWR);
+    write(fd, buffer, cont);
+    close(fd);
   }
   return close(create_socket);
 }
