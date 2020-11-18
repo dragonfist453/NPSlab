@@ -34,9 +34,11 @@ Lab 6 consisted of implementation of the following:
 
 ### 6A
 
-![6A_con](./output/6A/concurrent.png)
-![6A_iter](./output/6A/iterative.png)
+![6A](./output/6A/concurrent.png)
 
 ### 6B
+![6B](./output/6B/iterative.png)
 
-![6B](./output/6B/success.png)
+### 6C
+
+![6C](./output/6C/success.png)
