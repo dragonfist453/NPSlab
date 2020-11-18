@@ -49,6 +49,7 @@ int main()
             char buf[512];
             read(fd, buf, 512);
             send(acpt, buf, 512,0);
+            memset(buf, 0, sizeof(buf));
             system("rm temp");
             printf("\n"); 
         }
