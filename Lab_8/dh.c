@@ -32,8 +32,9 @@ int main()
 	int a, b;	// a - Alice's Secret Key, b - Bob's Secret Key.
 	int A, B;	// A - Alice's Public Key, B - Bob's Public Key
 
+    srand(time(0));
+
 	// choose secret integer for Alice's Pivate Key (only known to Alice)
-    srand(time(0))	;
 	a = 1 + rand()%1000;		// or use rand()
     printf("Alice selects secret integer: %d\n",a);
 
@@ -42,7 +43,6 @@ int main()
     printf("Computed public key of Alice is %d\n",A);
 
 	// choose secret integer for Bob's Pivate Key (only known to Bob)
-	srand(time(0))	;
 	b = 1 + rand()%1000;		// or use rand()
     printf("Bob selects secret integer: %d\n", b);
 
