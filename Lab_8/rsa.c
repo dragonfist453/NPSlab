@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-
+#include <time.h>
 
 long int gcd(long int a, long int b)
 {
@@ -46,6 +46,7 @@ int main()
 long int i, len;
 long int p, q, n, phi, e, d, cipher[50];
 char text[50];
+srand(time(0));
 
 //cout<< "Enter the text to be encrypted: ";
 printf("Enter the text to be encrypted: ");
